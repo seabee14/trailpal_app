@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Trailpal</string>
+    <string name="button_addTrail">Add Trail</string>
+    <string name="hint_trailTitle">Trail Title</string>
 </resources>
