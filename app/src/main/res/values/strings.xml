@@ -3,4 +3,5 @@
     <string name="button_addTrail">Add Trail</string>
     <string name="hint_trailTitle">Trail Title</string>
     <string name="hint_trailDescription">Description </string>
+    <string name="menu_addTrail">Add</string>
 </resources>
