@@ -2,7 +2,10 @@ package ie.wit.trailpal.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import com.google.android.material.snackbar.Snackbar
+import ie.wit.trailpal.R
 import ie.wit.trailpal.databinding.ActivityTrailpalBinding
 import ie.wit.trailpal.main.MainApp
 import ie.wit.trailpal.models.TrailModel
@@ -18,8 +21,12 @@ class TrailpalActivity : AppCompatActivity() {
         binding = ActivityTrailpalBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.toolbarAdd.title = title
+        setSupportActionBar(binding.toolbarAdd)
+
         app = application as MainApp
         i("Trailpal Activity started...")
+
         binding.btnAdd.setOnClickListener() {
             trail.title = binding.trailTitle.text.toString()
             trail.description = binding.description.text.toString()
@@ -36,5 +43,17 @@ class TrailpalActivity : AppCompatActivity() {
                     .show()
             }
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_trailpal, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.item_cancel -> { finish() }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
